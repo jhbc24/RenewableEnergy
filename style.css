@@ -1,0 +1,889 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.active {
+    color: whitesmoke;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+body, html {
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease;
+}
+
+/* NavBar */
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 20px 30px;
+    background-color: #E1CEA6;
+    color: #647B61;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+header {
+    width: 100vw;
+    height: 100vh;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding-top: 60px;
+    animation: slide 12s infinite;
+}
+
+@keyframes slide {
+    0% { background-image: url('resources/images/solar-philippines-project-1050x636.jpg'); }
+    33% { background-image: url('resources/images/21banguiwind.jpg'); }
+    66% { background-image: url('resources/images/soleca-raises-first-pico-hydro-power-plant-in-the-philippines.jpg'); }
+    100% { background-image: url('resources/images/solar-philippines-project-1050x636.jpg'); }
+}
+
+.header-content {
+    margin-bottom: 15vh;
+    color: whitesmoke;
+    text-align: left;
+    padding-left: 5vw;
+}
+
+.header-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8vmin;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.header-content p.slogan {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.5vmin;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #F2D27B;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.header-content p.description {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5vmin;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+
+.ctn {
+    padding: 12px 25px;
+    background: #F2D27B;
+    border-radius: 50px;
+    color: #333;
+    transition: all 0.3s ease;
+    font-size: 3.5vmin;
+    display: inline-block;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    font-weight: 700;
+}
+
+.ctn:hover {
+    background-color: #D7B553;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+}
+
+.menu-btn {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: none;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+@media only screen and (max-width: 850px) {
+    .menu-btn {
+        display: block;
+        width: 35px;
+        height: 35px;
+        top: 20px;
+        right: 20px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menu-btn {
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    transition: width 0.3s ease, height 0.3s ease;
+}
+
+.logo-text {
+    font-size: 1.5em;
+    color: #333;
+    font-weight: bold;
+    transition: font-size 0.3s ease;
+}
+
+@media only screen and (max-width: 850px) {
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .logo-text {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .logo {
+        justify-content: center;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 1em;
+        text-align: center;
+    }
+}
+
+.secondary-nav {
+    background-color: #EAB950;
+    padding: 0.75rem;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: top 0.3s ease-in-out;
+    position: relative;
+}
+
+.secondary-nav.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #EAB950;
+}
+
+.secondary-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.secondary-nav ul li {
+    display: inline;
+    margin-left: 50px;
+    margin-top: 10px;
+}
+
+.secondary-nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    position: relative;
+}
+
+.secondary-nav ul li a:hover {
+    color: black;
+}
+
+.secondary-nav ul li a::after {
+    content: '';
+    position: absolute;
+    background-color: #F2D27B;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -10px;
+    transition: width 0.3s ease-in-out;
+}
+
+.secondary-nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 850px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        background-color: #333;
+        border-radius: 8px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    .nav-links.mobile-menu {
+        display: flex;
+        width: auto;
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 5px 20px;
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: #fff;
+        font-size: 1em;
+        display: block;
+        padding: 10px 20px;
+        transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        background-color: #444;
+        border-radius: 5px;
+    }
+}
+
+
+
+/* Articles Section */
+section#article {
+    width: 100vw;
+    margin: 0;
+    padding: 50px;
+    background: linear-gradient(135deg, #D8E0A4 0%, #647B61 100%); /* Soft earthy gradient */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.title {
+    text-align: center;
+    font-size: 4vmin;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.row .col {
+    flex: 1 1 calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.row .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.row img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.row .col:hover img {
+    transform: scale(1.05);
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8vmin;
+    color: #333;
+    margin: 15px 0;
+    text-align: center;
+}
+
+h4 a {
+    color: inherit;
+    transition: color 0.3s;
+}
+
+h4 a:hover {
+    color: #f2d27b;
+}
+
+.more-btn {
+    font-family: 'Roboto', sans-serif;
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1.6vmin;
+    color: #333;
+    background-color: #f2d27b;
+    border: 2px solid #d7b553;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+}
+
+.more-btn:hover {
+    background-color: #d9a63b;
+    border-color: #c8a63b;
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 850px) {
+    .row .col {
+        flex: 1 1 calc(50% - 20px); /* Display 2 items per row on medium screens */
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .row .col {
+        flex: 1 1 100%; /* Display 1 item per row on small screens */
+    }
+
+    .more-btn {
+        font-size: 3vmin;
+        padding: 12px 20px;
+        position: static;
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+}
+
+
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 850px) {
+    .menu-btn {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Position below the menu button */
+        right: 10px; /* Slight margin from the right edge */
+        background-color: #333; /* Dark background */
+        border-radius: 8px; /* Rounded corners for a smoother look */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+        z-index: 999; /* Ensure it stays on top */
+    }
+
+    .nav-links.mobile-menu {
+        display: flex; /* Show the menu when toggled */
+        width: auto; /* Adjust width to fit the content */
+        padding: 10px 0; /* Added padding for aesthetics */
+    }
+
+    .nav-links li {
+        margin: 5px 20px; /* Reduced margin for compactness */
+        text-align: center;
+    }
+
+    .nav-links a {
+        color: #fff; /* White text for contrast */
+        font-size: 1em; /* Slightly smaller font size */
+        display: block;
+        padding: 10px 20px; /* Padding for clickable area */
+        transition: background 0.3s ease; /* Smooth background transition */
+    }
+
+    .nav-links a:hover {
+        background-color: #444; /* Subtle background change on hover */
+        border-radius: 5px; /* Rounded hover effect */
+    }
+
+    .videos {
+        width: 90%;
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .video-description {
+        font-size: 1em;
+    }
+}
+
+/* About Section */
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background-color: #f2f2f2;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+.content h1 {
+    font-size: 3em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.image {
+    flex: 1;
+    padding: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .content, .image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 2.5em;
+    }
+
+    .content p {
+        font-size: 1.1em;
+    }
+        .secondary-nav {
+        display: none;
+    }
+
+}
+
+
+/* Shared Styles for News and Events */
+
+/* News Section */
+section#news {
+    width: 100vw; /* Full width of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding: 60px;
+    border-radius: 0; /* Remove border-radius */
+    background: linear-gradient(135deg, #D8E0A4 0%, #647B61 100%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Events Section */
+section#events {
+    width: 100vw; /* Full width of the viewport */
+    margin: 0; /* Remove any default margin */
+    padding: 60px;
+    border-radius: 0; /* Remove border-radius */
+    background: linear-gradient(135deg, #89AA8F 0%, #958C41 100%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+section#news .title, section#events .title {
+    text-align: center;
+    font-size: 4vmin;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+section#news .row, section#events .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+section#news .col, section#events .col {
+    flex: 1 1 calc(33.33% - 20px); /* Display 3 items per row on desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+section#news .col:hover, section#events .col:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+section#news img, section#events img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+section#news .col:hover img, section#events .col:hover img {
+    transform: scale(1.05);
+}
+
+section#news h4, section#events h4 {
+    font-size: 2.8vmin;
+    color: #333;
+    margin: 15px 0;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+section#news h4 a, section#events h4 a {
+    color: inherit;
+    transition: color 0.3s;
+}
+
+section#news h4 a:hover, section#events h4 a:hover {
+    color: #f2d27b;
+}
+
+section#news .more-btn, section#events .more-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 1.6vmin;
+    color: #333;
+    background-color: #f2d27b;
+    border: 2px solid #d7b553;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+section#news .more-btn:hover, section#events .more-btn:hover {
+    background-color: #d9a63b;
+    border-color: #c8a63b;
+}
+
+/* Responsive Adjustments */
+@media only screen and (max-width: 850px) {
+    section#news .col, section#events .col {
+        flex: 1 1 100%; /* Display 1 item per row on mobile */
+    }
+}
+
+/* Responsive Design Adjustments */
+@media only screen and (max-width: 850px) {
+    .menu-btn {
+        display: block;
+        width: 35px;
+        height: 35px;
+        top: 20px;
+        right: 20px;
+    }
+
+    .header-content {
+        margin-bottom: 100px;
+        text-align: center;
+        padding-left: 30px;
+    }
+
+    .header-content h1 {
+        font-size: 6vmin;
+        text-align: center;
+    }
+
+    .header-content p.slogan,
+    .header-content p.description {
+        font-size: 4vmin;
+        text-align: center;
+    }
+
+    .ctn {
+        font-size: 3vmin;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menu-btn {
+        width: 30px;
+        height: 30px;
+        top: 15px;
+        right: 15px;
+    }
+    .header-content {
+        margin-bottom: 80px;
+        padding-left: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 5vmin;
+    }
+
+    .header-content p.slogan,
+    .header-content p.description {
+        font-size: 3.5vmin;
+    }
+
+    .ctn {
+        font-size: 2.5vmin;
+    }
+}
+
+/* Renewable Energies Section */
+section.renewable {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
+    color: #333;
+}
+
+section.renewable h1 {
+    font-size: 3.5em;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1e88e5;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.flip-card {
+    width: 100%;
+    max-width: 280px; /* Ensure cards don’t get too big */
+    height: 280px;
+    perspective: 1000px;
+    box-sizing: border-box; /* Ensure padding/margins don’t affect dimensions */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+
+.flip-card-front {
+    background-color: #f5f5f5;
+}
+
+.flip-card-back {
+    background-color: #1e88e5;
+    color: white;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.flip-card img {
+    width: auto;
+    height: 100%; /* Ensure image fits card height */
+    max-width: 100%; /* Ensure image fits within card width */
+    border-radius: 15px;
+}
+
+.flip-card-back h2, .flip-card-back p {
+    margin: 0;
+    padding: 0;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.flip-card-back h2 {
+    font-size: 1.2em; /* Base font size for h2 */
+    line-height: 1.3;
+}
+
+.flip-card-back p {
+    font-size: 0.9em; /* Base font size for p */
+    line-height: 1.4;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    section.renewable h1 {
+        font-size: 3em;
+    }
+    .flip-card {
+        max-width: 250px;
+        height: 250px;
+    }
+    .flip-card-back h2 {
+        font-size: 1.1em;
+    }
+    .flip-card-back p {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 992px) {
+    section.renewable h1 {
+        font-size: 2.5em;
+    }
+    .flip-card {
+        max-width: 220px;
+        height: 220px;
+    }
+    .flip-card-back h2 {
+        font-size: 1em;
+    }
+    .flip-card-back p {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    section.renewable h1 {
+        font-size: 2em;
+    }
+    .flip-card {
+        max-width: 200px;
+        height: 200px;
+    }
+    .flip-card-back h2 {
+        font-size: 0.9em;
+    }
+    .flip-card-back p {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 576px) {
+    section.renewable {
+        padding: 40px 10px;
+    }
+    section.renewable h1 {
+        font-size: 1.5em;
+    }
+    .flip-card {
+        max-width: 180px;
+        height: 180px;
+    }
+    .flip-card-back h2 {
+        font-size: 0.8em;
+    }
+    .flip-card-back p {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 480px) {
+    section.renewable h1 {
+        font-size: 1.2em;
+    }
+    .flip-card {
+        max-width: 150px;
+        height: 150px;
+    }
+    .flip-card-back h2 {
+        font-size: 0.7em;
+    }
+    .flip-card-back p {
+        font-size: 0.6em;
+    }
+}
